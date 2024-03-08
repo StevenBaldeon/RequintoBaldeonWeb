@@ -1,0 +1,104 @@
+﻿@model RequintoBaldeonWeb.Models.TPATROCINADORES
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TPATROCINADORES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_pagina_web)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_pagina_web)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_rrss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_rrss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_observacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

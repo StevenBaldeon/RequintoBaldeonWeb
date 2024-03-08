@@ -1,0 +1,98 @@
+﻿@model RequintoBaldeonWeb.Models.TPATROCINADORES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TPATROCINADORES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_pagina_web)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_pagina_web)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_rrss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_rrss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pat_observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pat_observacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

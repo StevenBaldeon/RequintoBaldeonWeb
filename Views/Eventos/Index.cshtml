@@ -1,0 +1,66 @@
+﻿@model IEnumerable<RequintoBaldeonWeb.Models.TEVENTOS>
+
+@{
+    ViewBag.Title = "Eventos";
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eventos</title>
+    <!-- Agrega la referencia al archivo CSS aquí -->
+    <link href="~/Content/Css/EventosStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Eventos</h2>
+                <p>
+                    <a href="@Url.Action("Create")" class="btn btn-success">Crear Nuevo</a>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Ubicación</th>
+                                <th>Precio de Entrada</th>
+                                <th>Estado</th>
+                                <th>Dirección</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_codigo)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_nombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_fecha)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_hora)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_ubicacion)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_precio_entrada)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_estado)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.eve_direccion)</td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", new { id = item.eve_codigo })" class="btn btn-warning">Editar</a>
+                                        <a href="@Url.Action("Details", new { id = item.eve_codigo })" class="btn btn-primary">Detalle</a>
+                                        <a href="@Url.Action("Delete", new { id = item.eve_codigo })" class="btn btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

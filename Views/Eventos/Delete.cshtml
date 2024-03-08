@@ -1,0 +1,112 @@
+﻿@model RequintoBaldeonWeb.Models.TEVENTOS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TEVENTOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_precio_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_precio_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_imagen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_imagen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_observacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_direccion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

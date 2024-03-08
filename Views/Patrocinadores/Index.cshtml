@@ -1,0 +1,87 @@
+﻿@model IEnumerable<RequintoBaldeonWeb.Models.TPATROCINADORES>
+
+@{
+    ViewBag.Title = "Patrocinadores";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pat_codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pat_nombre)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.pat_logo)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.pat_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pat_telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pat_direccion)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.pat_pagina_web)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pat_rrss)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.pat_estado)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.pat_observacion)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pat_codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pat_nombre)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.pat_logo)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.pat_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pat_telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pat_direccion)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.pat_pagina_web)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pat_rrss)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.pat_estado)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.pat_observacion)
+        </td>*@
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.pat_codigo }, new { @class = "btn btn-warning" }) |
+        @Html.ActionLink("Detalle", "Details", new { id = item.pat_codigo }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.pat_codigo }, new { @class = "btn btn-danger" })
+    </td>
+    </tr>
+}
+
+</table>

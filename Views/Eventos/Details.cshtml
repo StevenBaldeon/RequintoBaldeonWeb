@@ -1,0 +1,106 @@
+﻿@model RequintoBaldeonWeb.Models.TEVENTOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TEVENTOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_precio_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_precio_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_imagen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_imagen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_observacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eve_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eve_direccion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

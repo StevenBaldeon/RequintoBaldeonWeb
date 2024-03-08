@@ -1,0 +1,87 @@
+﻿@model IEnumerable<RequintoBaldeonWeb.Models.TUSUARIOS>
+
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_cedula)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.usu_clave)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.usu_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_administrador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_estado)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.usu_observacion)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_cedula)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.usu_clave)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_administrador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_estado)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.usu_observacion)
+        </td>*@
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.usu_codigo }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Detalle", "Details", new { id = item.usu_codigo }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.usu_codigo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9ad0ff1015e34a51b120b7e9adf3caaa" Name="Diagram1">
+        <EntityTypeShape EntityType="tesis_requinto_baldeonModel.R_ARTISTAS_PATROCINADORES" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tesis_requinto_baldeonModel.R_EVENTOS_ARTISTAS" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tesis_requinto_baldeonModel.TARTISTAS" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tesis_requinto_baldeonModel.TEVENTOS" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tesis_requinto_baldeonModel.TFORMATOS" Width="1.5" PointX="3.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tesis_requinto_baldeonModel.TPATROCINADORES" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tesis_requinto_baldeonModel.TUSUARIOS" Width="1.5" PointX="5.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="tesis_requinto_baldeonModel.FK_R_ARTISTAS_PATROCINADORES_TARTISTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="tesis_requinto_baldeonModel.FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES" ManuallyRouted="false" />
+        <AssociationConnector Association="tesis_requinto_baldeonModel.FK_R_EVENTOS_ARTISTAS_TARTISTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="tesis_requinto_baldeonModel.FK_R_EVENTOS_ARTISTAS_TEVENTOS" ManuallyRouted="false" />
+        <AssociationConnector Association="tesis_requinto_baldeonModel.FK_R_EVENTOS_ARTISTAS_TFORMATOS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

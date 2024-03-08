@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tesis_requinto_baldeonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="R_ARTISTAS_PATROCINADORES">
+          <Key>
+            <PropertyRef Name="rap_codigo" />
+          </Key>
+          <Property Name="rap_codigo" Type="numeric" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="art_codigo" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="pat_codigo" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="rap_detalle" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="rap_fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="rap_fecha_fin" Type="date" />
+          <Property Name="rap_estado" Type="bit" />
+          <Property Name="rap_observacion" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="R_EVENTOS_ARTISTAS">
+          <Key>
+            <PropertyRef Name="rea_codigo" />
+          </Key>
+          <Property Name="rea_codigo" Type="numeric" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="eve_codigo" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="art_codigo" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="for_codigo" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="rea_precio_artista" Type="money" />
+          <Property Name="rea_estado" Type="bit" />
+          <Property Name="rea_observacion" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TARTISTAS">
+          <Key>
+            <PropertyRef Name="art_codigo" />
+          </Key>
+          <Property Name="art_codigo" Type="numeric" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="art_nombres" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="art_apellidos" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="art_nombre_musical" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="art_fecha_lanzamiento" Type="date" />
+          <Property Name="art_fecha_nac" Type="date" />
+          <Property Name="art_telefono" Type="numeric" Precision="13" Scale="0" />
+          <Property Name="art_email" Type="varchar" MaxLength="80" />
+          <Property Name="art_pagina_web" Type="varchar" MaxLength="80" />
+          <Property Name="art_facebook" Type="varchar" MaxLength="80" />
+          <Property Name="art_instagram" Type="varchar" MaxLength="80" />
+          <Property Name="art_tiktok" Type="varchar" MaxLength="80" />
+          <Property Name="art_youtube" Type="varchar" MaxLength="80" />
+          <Property Name="art_rrss" Type="varchar" MaxLength="80" />
+          <Property Name="art_tipo" Type="int" />
+          <Property Name="art_estado" Type="bit" />
+          <Property Name="art_observacion" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TEVENTOS">
+          <Key>
+            <PropertyRef Name="eve_codigo" />
+          </Key>
+          <Property Name="eve_codigo" Type="numeric" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="eve_nombre" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="eve_descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="eve_fecha" Type="date" Nullable="false" />
+          <Property Name="eve_hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="eve_ubicacion" Type="varchar" MaxLength="200" />
+          <Property Name="eve_precio_entrada" Type="money" />
+          <Property Name="eve_imagen" Type="varchar" MaxLength="200" />
+          <Property Name="eve_estado" Type="bit" />
+          <Property Name="eve_observacion" Type="varchar" MaxLength="300" />
+          <Property Name="eve_direccion" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TFORMATOS">
+          <Key>
+            <PropertyRef Name="for_codigo" />
+          </Key>
+          <Property Name="for_codigo" Type="numeric" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="for_detalle" Type="varchar" MaxLength="80" />
+          <Property Name="for_estado" Type="bit" />
+          <Property Name="for_observacion" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TPATROCINADORES">
+          <Key>
+            <PropertyRef Name="pat_codigo" />
+          </Key>
+          <Property Name="pat_codigo" Type="numeric" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pat_nombre" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="pat_logo" Type="varchar" MaxLength="200" />
+          <Property Name="pat_email" Type="varchar" MaxLength="80" />
+          <Property Name="pat_telefono" Type="varchar" MaxLength="13" />
+          <Property Name="pat_direccion" Type="varchar" MaxLength="200" />
+          <Property Name="pat_pagina_web" Type="varchar" MaxLength="80" />
+          <Property Name="pat_rrss" Type="varchar" MaxLength="80" />
+          <Property Name="pat_estado" Type="bit" />
+          <Property Name="pat_observacion" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TUSUARIOS">
+          <Key>
+            <PropertyRef Name="usu_codigo" />
+          </Key>
+          <Property Name="usu_codigo" Type="numeric" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usu_nombres" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="usu_apellidos" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="usu_cedula" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="usu_clave" Type="varchar" MaxLength="300" />
+          <Property Name="usu_email" Type="varchar" MaxLength="80" />
+          <Property Name="usu_telefono" Type="varchar" MaxLength="13" />
+          <Property Name="usu_administrador" Type="bit" Nullable="false" />
+          <Property Name="usu_estado" Type="bit" Nullable="false" />
+          <Property Name="usu_observacion" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <Association Name="FK_R_ARTISTAS_PATROCINADORES_TARTISTAS">
+          <End Role="TARTISTAS" Type="Self.TARTISTAS" Multiplicity="1" />
+          <End Role="R_ARTISTAS_PATROCINADORES" Type="Self.R_ARTISTAS_PATROCINADORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TARTISTAS">
+              <PropertyRef Name="art_codigo" />
+            </Principal>
+            <Dependent Role="R_ARTISTAS_PATROCINADORES">
+              <PropertyRef Name="art_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES">
+          <End Role="TPATROCINADORES" Type="Self.TPATROCINADORES" Multiplicity="1" />
+          <End Role="R_ARTISTAS_PATROCINADORES" Type="Self.R_ARTISTAS_PATROCINADORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TPATROCINADORES">
+              <PropertyRef Name="pat_codigo" />
+            </Principal>
+            <Dependent Role="R_ARTISTAS_PATROCINADORES">
+              <PropertyRef Name="pat_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_EVENTOS_ARTISTAS_TARTISTAS">
+          <End Role="TARTISTAS" Type="Self.TARTISTAS" Multiplicity="1" />
+          <End Role="R_EVENTOS_ARTISTAS" Type="Self.R_EVENTOS_ARTISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TARTISTAS">
+              <PropertyRef Name="art_codigo" />
+            </Principal>
+            <Dependent Role="R_EVENTOS_ARTISTAS">
+              <PropertyRef Name="art_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_EVENTOS_ARTISTAS_TEVENTOS">
+          <End Role="TEVENTOS" Type="Self.TEVENTOS" Multiplicity="1" />
+          <End Role="R_EVENTOS_ARTISTAS" Type="Self.R_EVENTOS_ARTISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEVENTOS">
+              <PropertyRef Name="eve_codigo" />
+            </Principal>
+            <Dependent Role="R_EVENTOS_ARTISTAS">
+              <PropertyRef Name="eve_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_EVENTOS_ARTISTAS_TFORMATOS">
+          <End Role="TFORMATOS" Type="Self.TFORMATOS" Multiplicity="1" />
+          <End Role="R_EVENTOS_ARTISTAS" Type="Self.R_EVENTOS_ARTISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TFORMATOS">
+              <PropertyRef Name="for_codigo" />
+            </Principal>
+            <Dependent Role="R_EVENTOS_ARTISTAS">
+              <PropertyRef Name="for_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tesis_requinto_baldeonModelStoreContainer">
+          <EntitySet Name="R_ARTISTAS_PATROCINADORES" EntityType="Self.R_ARTISTAS_PATROCINADORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="R_EVENTOS_ARTISTAS" EntityType="Self.R_EVENTOS_ARTISTAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TARTISTAS" EntityType="Self.TARTISTAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEVENTOS" EntityType="Self.TEVENTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TFORMATOS" EntityType="Self.TFORMATOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TPATROCINADORES" EntityType="Self.TPATROCINADORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TUSUARIOS" EntityType="Self.TUSUARIOS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_R_ARTISTAS_PATROCINADORES_TARTISTAS" Association="Self.FK_R_ARTISTAS_PATROCINADORES_TARTISTAS">
+            <End Role="TARTISTAS" EntitySet="TARTISTAS" />
+            <End Role="R_ARTISTAS_PATROCINADORES" EntitySet="R_ARTISTAS_PATROCINADORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES" Association="Self.FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES">
+            <End Role="TPATROCINADORES" EntitySet="TPATROCINADORES" />
+            <End Role="R_ARTISTAS_PATROCINADORES" EntitySet="R_ARTISTAS_PATROCINADORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_EVENTOS_ARTISTAS_TARTISTAS" Association="Self.FK_R_EVENTOS_ARTISTAS_TARTISTAS">
+            <End Role="TARTISTAS" EntitySet="TARTISTAS" />
+            <End Role="R_EVENTOS_ARTISTAS" EntitySet="R_EVENTOS_ARTISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_EVENTOS_ARTISTAS_TEVENTOS" Association="Self.FK_R_EVENTOS_ARTISTAS_TEVENTOS">
+            <End Role="TEVENTOS" EntitySet="TEVENTOS" />
+            <End Role="R_EVENTOS_ARTISTAS" EntitySet="R_EVENTOS_ARTISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_EVENTOS_ARTISTAS_TFORMATOS" Association="Self.FK_R_EVENTOS_ARTISTAS_TFORMATOS">
+            <End Role="TFORMATOS" EntitySet="TFORMATOS" />
+            <End Role="R_EVENTOS_ARTISTAS" EntitySet="R_EVENTOS_ARTISTAS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tesis_requinto_baldeonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="R_ARTISTAS_PATROCINADORES">
+          <Key>
+            <PropertyRef Name="rap_codigo" />
+          </Key>
+          <Property Name="rap_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="art_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="pat_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="rap_detalle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rap_fecha_inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="rap_fecha_fin" Type="DateTime" Precision="0" />
+          <Property Name="rap_estado" Type="Boolean" />
+          <Property Name="rap_observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TARTISTAS" Relationship="Self.FK_R_ARTISTAS_PATROCINADORES_TARTISTAS" FromRole="R_ARTISTAS_PATROCINADORES" ToRole="TARTISTAS" />
+          <NavigationProperty Name="TPATROCINADORES" Relationship="Self.FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES" FromRole="R_ARTISTAS_PATROCINADORES" ToRole="TPATROCINADORES" />
+        </EntityType>
+        <EntityType Name="R_EVENTOS_ARTISTAS">
+          <Key>
+            <PropertyRef Name="rea_codigo" />
+          </Key>
+          <Property Name="rea_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="eve_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="art_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="for_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="rea_precio_artista" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="rea_estado" Type="Boolean" />
+          <Property Name="rea_observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TARTISTAS" Relationship="Self.FK_R_EVENTOS_ARTISTAS_TARTISTAS" FromRole="R_EVENTOS_ARTISTAS" ToRole="TARTISTAS" />
+          <NavigationProperty Name="TEVENTOS" Relationship="Self.FK_R_EVENTOS_ARTISTAS_TEVENTOS" FromRole="R_EVENTOS_ARTISTAS" ToRole="TEVENTOS" />
+          <NavigationProperty Name="TFORMATOS" Relationship="Self.FK_R_EVENTOS_ARTISTAS_TFORMATOS" FromRole="R_EVENTOS_ARTISTAS" ToRole="TFORMATOS" />
+        </EntityType>
+        <EntityType Name="TARTISTAS">
+          <Key>
+            <PropertyRef Name="art_codigo" />
+          </Key>
+          <Property Name="art_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="art_nombres" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="art_apellidos" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="art_nombre_musical" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="art_fecha_lanzamiento" Type="DateTime" Precision="0" />
+          <Property Name="art_fecha_nac" Type="DateTime" Precision="0" />
+          <Property Name="art_telefono" Type="Decimal" Precision="13" Scale="0" />
+          <Property Name="art_email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="art_pagina_web" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="art_facebook" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="art_instagram" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="art_tiktok" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="art_youtube" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="art_rrss" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="art_tipo" Type="Int32" />
+          <Property Name="art_estado" Type="Boolean" />
+          <Property Name="art_observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="R_ARTISTAS_PATROCINADORES" Relationship="Self.FK_R_ARTISTAS_PATROCINADORES_TARTISTAS" FromRole="TARTISTAS" ToRole="R_ARTISTAS_PATROCINADORES" />
+          <NavigationProperty Name="R_EVENTOS_ARTISTAS" Relationship="Self.FK_R_EVENTOS_ARTISTAS_TARTISTAS" FromRole="TARTISTAS" ToRole="R_EVENTOS_ARTISTAS" />
+        </EntityType>
+        <EntityType Name="TEVENTOS">
+          <Key>
+            <PropertyRef Name="eve_codigo" />
+          </Key>
+          <Property Name="eve_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="eve_nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eve_descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eve_fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="eve_hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="eve_ubicacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="eve_precio_entrada" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="eve_imagen" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="eve_estado" Type="Boolean" />
+          <Property Name="eve_observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="eve_direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="R_EVENTOS_ARTISTAS" Relationship="Self.FK_R_EVENTOS_ARTISTAS_TEVENTOS" FromRole="TEVENTOS" ToRole="R_EVENTOS_ARTISTAS" />
+        </EntityType>
+        <EntityType Name="TFORMATOS">
+          <Key>
+            <PropertyRef Name="for_codigo" />
+          </Key>
+          <Property Name="for_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="for_detalle" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="for_estado" Type="Boolean" />
+          <Property Name="for_observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="R_EVENTOS_ARTISTAS" Relationship="Self.FK_R_EVENTOS_ARTISTAS_TFORMATOS" FromRole="TFORMATOS" ToRole="R_EVENTOS_ARTISTAS" />
+        </EntityType>
+        <EntityType Name="TPATROCINADORES">
+          <Key>
+            <PropertyRef Name="pat_codigo" />
+          </Key>
+          <Property Name="pat_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pat_nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pat_logo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pat_email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="pat_telefono" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="pat_direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pat_pagina_web" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="pat_rrss" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="pat_estado" Type="Boolean" />
+          <Property Name="pat_observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="R_ARTISTAS_PATROCINADORES" Relationship="Self.FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES" FromRole="TPATROCINADORES" ToRole="R_ARTISTAS_PATROCINADORES" />
+        </EntityType>
+        <EntityType Name="TUSUARIOS">
+          <Key>
+            <PropertyRef Name="usu_codigo" />
+          </Key>
+          <Property Name="usu_codigo" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usu_nombres" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_apellidos" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_cedula" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_clave" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="usu_email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="usu_telefono" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="usu_administrador" Type="Boolean" Nullable="false" />
+          <Property Name="usu_estado" Type="Boolean" Nullable="false" />
+          <Property Name="usu_observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_R_ARTISTAS_PATROCINADORES_TARTISTAS">
+          <End Role="TARTISTAS" Type="Self.TARTISTAS" Multiplicity="1" />
+          <End Role="R_ARTISTAS_PATROCINADORES" Type="Self.R_ARTISTAS_PATROCINADORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TARTISTAS">
+              <PropertyRef Name="art_codigo" />
+            </Principal>
+            <Dependent Role="R_ARTISTAS_PATROCINADORES">
+              <PropertyRef Name="art_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES">
+          <End Role="TPATROCINADORES" Type="Self.TPATROCINADORES" Multiplicity="1" />
+          <End Role="R_ARTISTAS_PATROCINADORES" Type="Self.R_ARTISTAS_PATROCINADORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TPATROCINADORES">
+              <PropertyRef Name="pat_codigo" />
+            </Principal>
+            <Dependent Role="R_ARTISTAS_PATROCINADORES">
+              <PropertyRef Name="pat_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_EVENTOS_ARTISTAS_TARTISTAS">
+          <End Role="TARTISTAS" Type="Self.TARTISTAS" Multiplicity="1" />
+          <End Role="R_EVENTOS_ARTISTAS" Type="Self.R_EVENTOS_ARTISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TARTISTAS">
+              <PropertyRef Name="art_codigo" />
+            </Principal>
+            <Dependent Role="R_EVENTOS_ARTISTAS">
+              <PropertyRef Name="art_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_EVENTOS_ARTISTAS_TEVENTOS">
+          <End Role="TEVENTOS" Type="Self.TEVENTOS" Multiplicity="1" />
+          <End Role="R_EVENTOS_ARTISTAS" Type="Self.R_EVENTOS_ARTISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEVENTOS">
+              <PropertyRef Name="eve_codigo" />
+            </Principal>
+            <Dependent Role="R_EVENTOS_ARTISTAS">
+              <PropertyRef Name="eve_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_EVENTOS_ARTISTAS_TFORMATOS">
+          <End Role="TFORMATOS" Type="Self.TFORMATOS" Multiplicity="1" />
+          <End Role="R_EVENTOS_ARTISTAS" Type="Self.R_EVENTOS_ARTISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TFORMATOS">
+              <PropertyRef Name="for_codigo" />
+            </Principal>
+            <Dependent Role="R_EVENTOS_ARTISTAS">
+              <PropertyRef Name="for_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbModels" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="R_ARTISTAS_PATROCINADORES" EntityType="Self.R_ARTISTAS_PATROCINADORES" />
+          <EntitySet Name="R_EVENTOS_ARTISTAS" EntityType="Self.R_EVENTOS_ARTISTAS" />
+          <EntitySet Name="TARTISTAS" EntityType="Self.TARTISTAS" />
+          <EntitySet Name="TEVENTOS" EntityType="Self.TEVENTOS" />
+          <EntitySet Name="TFORMATOS" EntityType="Self.TFORMATOS" />
+          <EntitySet Name="TPATROCINADORES" EntityType="Self.TPATROCINADORES" />
+          <EntitySet Name="TUSUARIOS" EntityType="Self.TUSUARIOS" />
+          <AssociationSet Name="FK_R_ARTISTAS_PATROCINADORES_TARTISTAS" Association="Self.FK_R_ARTISTAS_PATROCINADORES_TARTISTAS">
+            <End Role="TARTISTAS" EntitySet="TARTISTAS" />
+            <End Role="R_ARTISTAS_PATROCINADORES" EntitySet="R_ARTISTAS_PATROCINADORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES" Association="Self.FK_R_ARTISTAS_PATROCINADORES_TPATROCINADORES">
+            <End Role="TPATROCINADORES" EntitySet="TPATROCINADORES" />
+            <End Role="R_ARTISTAS_PATROCINADORES" EntitySet="R_ARTISTAS_PATROCINADORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_EVENTOS_ARTISTAS_TARTISTAS" Association="Self.FK_R_EVENTOS_ARTISTAS_TARTISTAS">
+            <End Role="TARTISTAS" EntitySet="TARTISTAS" />
+            <End Role="R_EVENTOS_ARTISTAS" EntitySet="R_EVENTOS_ARTISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_EVENTOS_ARTISTAS_TEVENTOS" Association="Self.FK_R_EVENTOS_ARTISTAS_TEVENTOS">
+            <End Role="TEVENTOS" EntitySet="TEVENTOS" />
+            <End Role="R_EVENTOS_ARTISTAS" EntitySet="R_EVENTOS_ARTISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_EVENTOS_ARTISTAS_TFORMATOS" Association="Self.FK_R_EVENTOS_ARTISTAS_TFORMATOS">
+            <End Role="TFORMATOS" EntitySet="TFORMATOS" />
+            <End Role="R_EVENTOS_ARTISTAS" EntitySet="R_EVENTOS_ARTISTAS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tesis_requinto_baldeonModelStoreContainer" CdmEntityContainer="DbModels">
+          <EntitySetMapping Name="R_ARTISTAS_PATROCINADORES">
+            <EntityTypeMapping TypeName="tesis_requinto_baldeonModel.R_ARTISTAS_PATROCINADORES">
+              <MappingFragment StoreEntitySet="R_ARTISTAS_PATROCINADORES">
+                <ScalarProperty Name="rap_codigo" ColumnName="rap_codigo" />
+                <ScalarProperty Name="art_codigo" ColumnName="art_codigo" />
+                <ScalarProperty Name="pat_codigo" ColumnName="pat_codigo" />
+                <ScalarProperty Name="rap_detalle" ColumnName="rap_detalle" />
+                <ScalarProperty Name="rap_fecha_inicio" ColumnName="rap_fecha_inicio" />
+                <ScalarProperty Name="rap_fecha_fin" ColumnName="rap_fecha_fin" />
+                <ScalarProperty Name="rap_estado" ColumnName="rap_estado" />
+                <ScalarProperty Name="rap_observacion" ColumnName="rap_observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="R_EVENTOS_ARTISTAS">
+            <EntityTypeMapping TypeName="tesis_requinto_baldeonModel.R_EVENTOS_ARTISTAS">
+              <MappingFragment StoreEntitySet="R_EVENTOS_ARTISTAS">
+                <ScalarProperty Name="rea_codigo" ColumnName="rea_codigo" />
+                <ScalarProperty Name="eve_codigo" ColumnName="eve_codigo" />
+                <ScalarProperty Name="art_codigo" ColumnName="art_codigo" />
+                <ScalarProperty Name="for_codigo" ColumnName="for_codigo" />
+                <ScalarProperty Name="rea_precio_artista" ColumnName="rea_precio_artista" />
+                <ScalarProperty Name="rea_estado" ColumnName="rea_estado" />
+                <ScalarProperty Name="rea_observacion" ColumnName="rea_observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TARTISTAS">
+            <EntityTypeMapping TypeName="tesis_requinto_baldeonModel.TARTISTAS">
+              <MappingFragment StoreEntitySet="TARTISTAS">
+                <ScalarProperty Name="art_codigo" ColumnName="art_codigo" />
+                <ScalarProperty Name="art_nombres" ColumnName="art_nombres" />
+                <ScalarProperty Name="art_apellidos" ColumnName="art_apellidos" />
+                <ScalarProperty Name="art_nombre_musical" ColumnName="art_nombre_musical" />
+                <ScalarProperty Name="art_fecha_lanzamiento" ColumnName="art_fecha_lanzamiento" />
+                <ScalarProperty Name="art_fecha_nac" ColumnName="art_fecha_nac" />
+                <ScalarProperty Name="art_telefono" ColumnName="art_telefono" />
+                <ScalarProperty Name="art_email" ColumnName="art_email" />
+                <ScalarProperty Name="art_pagina_web" ColumnName="art_pagina_web" />
+                <ScalarProperty Name="art_facebook" ColumnName="art_facebook" />
+                <ScalarProperty Name="art_instagram" ColumnName="art_instagram" />
+                <ScalarProperty Name="art_tiktok" ColumnName="art_tiktok" />
+                <ScalarProperty Name="art_youtube" ColumnName="art_youtube" />
+                <ScalarProperty Name="art_rrss" ColumnName="art_rrss" />
+                <ScalarProperty Name="art_tipo" ColumnName="art_tipo" />
+                <ScalarProperty Name="art_estado" ColumnName="art_estado" />
+                <ScalarProperty Name="art_observacion" ColumnName="art_observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEVENTOS">
+            <EntityTypeMapping TypeName="tesis_requinto_baldeonModel.TEVENTOS">
+              <MappingFragment StoreEntitySet="TEVENTOS">
+                <ScalarProperty Name="eve_codigo" ColumnName="eve_codigo" />
+                <ScalarProperty Name="eve_nombre" ColumnName="eve_nombre" />
+                <ScalarProperty Name="eve_descripcion" ColumnName="eve_descripcion" />
+                <ScalarProperty Name="eve_fecha" ColumnName="eve_fecha" />
+                <ScalarProperty Name="eve_hora" ColumnName="eve_hora" />
+                <ScalarProperty Name="eve_ubicacion" ColumnName="eve_ubicacion" />
+                <ScalarProperty Name="eve_precio_entrada" ColumnName="eve_precio_entrada" />
+                <ScalarProperty Name="eve_imagen" ColumnName="eve_imagen" />
+                <ScalarProperty Name="eve_estado" ColumnName="eve_estado" />
+                <ScalarProperty Name="eve_observacion" ColumnName="eve_observacion" />
+                <ScalarProperty Name="eve_direccion" ColumnName="eve_direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TFORMATOS">
+            <EntityTypeMapping TypeName="tesis_requinto_baldeonModel.TFORMATOS">
+              <MappingFragment StoreEntitySet="TFORMATOS">
+                <ScalarProperty Name="for_codigo" ColumnName="for_codigo" />
+                <ScalarProperty Name="for_detalle" ColumnName="for_detalle" />
+                <ScalarProperty Name="for_estado" ColumnName="for_estado" />
+                <ScalarProperty Name="for_observacion" ColumnName="for_observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TPATROCINADORES">
+            <EntityTypeMapping TypeName="tesis_requinto_baldeonModel.TPATROCINADORES">
+              <MappingFragment StoreEntitySet="TPATROCINADORES">
+                <ScalarProperty Name="pat_codigo" ColumnName="pat_codigo" />
+                <ScalarProperty Name="pat_nombre" ColumnName="pat_nombre" />
+                <ScalarProperty Name="pat_logo" ColumnName="pat_logo" />
+                <ScalarProperty Name="pat_email" ColumnName="pat_email" />
+                <ScalarProperty Name="pat_telefono" ColumnName="pat_telefono" />
+                <ScalarProperty Name="pat_direccion" ColumnName="pat_direccion" />
+                <ScalarProperty Name="pat_pagina_web" ColumnName="pat_pagina_web" />
+                <ScalarProperty Name="pat_rrss" ColumnName="pat_rrss" />
+                <ScalarProperty Name="pat_estado" ColumnName="pat_estado" />
+                <ScalarProperty Name="pat_observacion" ColumnName="pat_observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TUSUARIOS">
+            <EntityTypeMapping TypeName="tesis_requinto_baldeonModel.TUSUARIOS">
+              <MappingFragment StoreEntitySet="TUSUARIOS">
+                <ScalarProperty Name="usu_codigo" ColumnName="usu_codigo" />
+                <ScalarProperty Name="usu_nombres" ColumnName="usu_nombres" />
+                <ScalarProperty Name="usu_apellidos" ColumnName="usu_apellidos" />
+                <ScalarProperty Name="usu_cedula" ColumnName="usu_cedula" />
+                <ScalarProperty Name="usu_clave" ColumnName="usu_clave" />
+                <ScalarProperty Name="usu_email" ColumnName="usu_email" />
+                <ScalarProperty Name="usu_telefono" ColumnName="usu_telefono" />
+                <ScalarProperty Name="usu_administrador" ColumnName="usu_administrador" />
+                <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+                <ScalarProperty Name="usu_observacion" ColumnName="usu_observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
